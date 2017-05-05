@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Title -->
+
+	<!-- Style Switches-->
+
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/style.css')}}">
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/hover.css')}}">
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/bootstrap.css')}}"> 
+	<link href="{{ url_for('static',filename='font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+
+	<!-- Mobile Meta -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- JQuery Script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700,800,700italic,600italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Neuton:400,200,300' rel='stylesheet' type='text/css'>
+
+
+</head>
+<header>
+<div class="row">
+<div class="bg-image" id="jumboid">
+<img src="{{url_for('static',filename='images/icmr.jpg')}}" class="img-responsive" alt="ICMR" width="100%" height="40%" back> 
+</div>
+</header>
+<br>
+<body>
+<div class="container">
+    	<div class="row">
+    			<div class="col-xs-2">
+    			</div>
+    			<div class="col-xs-6">
+    				<h3> <font color="#ff3a3a">Feedback</font></h3>	
+    			</div>
+    			<div class="col-xs-2" >
+    				<ul>
+    					<a href="{{url_for('rechome')  }}" class="hvr-pop" ><li class="fa fa-home" id="home-link"></li></a>
+    				</ul>
+    			</div>
+    			<div class="col-xs-2">		
+    			</div>
+    		</div>
+    		<br>
+    	<div class="panel-body">
+			<div class="row">
+				<div class="col-xs-2">
+				</div>
+					<div class="col-xs-8">
+								<form id="login-form" action="#" method="post" role="form" style="display: block;">
+									<div class="form-group">
+									<h5><font color="#029f5b"> Enter the Patient's name</font></h5>
+										<input type="text" name="pat-name" id="pat-name" tabindex="1" class="form-control" placeholder="Patient Name" value="" required>
+									</div>
+									<div class="form-group">
+									<h5><font color="#029f5b"> Enter the Patient's ID</font></h5>
+										<input type="text" name="pat-id" id="pat-id" tabindex="1" class="form-control" placeholder="Patient ID" value="" required>
+									</div>
+
+									<div class="form-group">
+									<h5><font color="#029f5b"> Entry Date</font></h5>
+										<input type="date" name="pat-id" id="pat-id" tabindex="1" class="form-control" placeholder="Entry Date" value="" required>
+									</div>
+
+									<div class="form-group">
+									<h5><font color="#029f5b"> Exit Date</font></h5>
+										<input type="date" name="pat-id" id="pat-id" tabindex="1" class="form-control" placeholder="Exit Date" value="" required>
+									</div>
+
+									<h4><font color="#ff3a3a"> Please give your feedback :</font></h4>
+									<div class="form-group">
+									<h5><font color="#029f5b">1. Were you satisfied with our service ?</font></h5>
+										<input type="radio" name="service" value="Yes"> Yes <br>
+  										<input type="radio" name="service" value="No"> No <br>
+									</div>
+
+									<div class="form-group">
+									<h5><font color="#029f5b">2. How would your grade our doctors in a scale of 5 ?</font></h5>
+										<input type="radio" name="Doctor" value="5"> 5 <br>
+										<input type="radio" name="Doctor" value="4"> 4 <br>
+										<input type="radio" name="Doctor" value="3"> 3 <br>
+										<input type="radio" name="Doctor" value="2"> 2 <br>
+										<input type="radio" name="Doctor" value="1"> 1 <br>
+									</div>
+
+									<div class="form-group">
+									<h5><font color="#029f5b">3. Were all your needs met by the nurse ?</font></h5>
+										<input type="radio" name="nurse" value="Yes"> Yes<br>
+  										<input type="radio" name="nurse" value="No"> No <br>
+									</div>
+
+									<div class="form-group">
+									<h5><font color="#029f5b">4. How noisy was your room or the sleeping space in our hospital ?</font></h5>
+										<input type="radio" name="Sleep" value="ExNois"> Extremely Noisy <br>
+										<input type="radio" name="Sleep" value="Mod"> Moderately Noisy <br>
+										<input type="radio" name="Sleep" value="Not"> Not at all noisy <br>
+									</div>
+
+									<div class="form-group">
+									<h5><font color="#029f5b">5. How well was your pain controlled during your stay in our hospital ?</font></h5>
+										<input type="radio" name="Sleep" value="ExWell"> Extremely Well <br>
+										<input type="radio" name="Sleep" value="ModW"> Moderately Well <br>
+										<input type="radio" name="Sleep" value="NotW"> Not at all Well <br>
+										</div>
+
+									<div class="form-group">
+									<h5><font color="#029f5b">6. Did the meals that were served in the hospital meed your dietary needs ?</font></h5>
+										<input type="radio" name="Sleep" value="ExWell"> Extremely Well <br>
+										<input type="radio" name="Sleep" value="ModW"> Moderately Well <br>
+										<input type="radio" name="Sleep" value="NotW"> Not at all Well <br>
+									</div>
+
+									<div class="form-group">		
+									<h5><font color="#029f5b">7. How clean was your room ?</font></h5>
+										<input type="radio" name="Sleep" value="ExWell"> Extremely Well <br>
+										<input type="radio" name="Sleep" value="ModW"> Moderately Well <br>
+										<input type="radio" name="Sleep" value="NotW"> Not at all Well <br>
+									</div>
+
+									<div class="form-group">	
+									<h5><font color="#029f5b">8. How likely are you too choose this hospital again in the future ?</font></h5>
+										<input type="radio" name="Sleep" value="ExL"> Extremely Likely <br>
+										<input type="radio" name="Sleep" value="ModL"> Moderately Likely <br>
+										<input type="radio" name="Sleep" value="NotL"> Not at all  <br>
+									</div>
+
+									<div class="form-group">	
+									<h5><font color="#029f5b">9. How likely are you to recommedn this hospital to others ?</font></h5>
+										<input type="radio" name="Sleep" value="ExL"> Extremely Likely <br>
+										<input type="radio" name="Sleep" value="ModL"> Moderately Likely <br>
+										<input type="radio" name="Sleep" value="NotL"> Not at all  <br>
+									</div>
+
+									<div class="form-group">	
+									<h4><font color="#029f5b">Give your suggestions if you have any :</font></h4>
+										<input type="text" name="pat-suggestions" id="pat-suggestions" tabindex="1" class="form-control" placeholder="Your Suggestions" value="" required>
+									</div>
+									<div class="form-group">
+									<input type="button" class="btn btn-success" name="Submit"  Value="Submit">
+									</div>
+								</div>
+							</div>
+							</div>
+						</form>
+						<script type="text/javascript" src="{{ url_for('static',filename='js/main.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/form-validation.js')}}"></script>
+					</body>
+				</html>

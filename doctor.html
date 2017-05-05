@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Title -->
+
+	<title>Sign in</title>
+ 	
+	<!-- Style Switches-->
+
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/style.css')}}">
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/hover.css')}}">
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/bootstrap.css')}}"> 
+	<link href="{{ url_for('static',filename='font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+
+	<!-- Mobile Meta -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- JQuery Script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700,800,700italic,600italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Neuton:400,200,300' rel='stylesheet' type='text/css'>
+
+
+</head>
+<header>
+<div class="row">
+<div class="bg-image" id="jumboid">
+<img src="{{url_for('static',filename='images/icmr.jpg')}}" class="img-responsive" alt="ICMR" width="100%" height="40%" back> 
+</div>
+</header>
+<br>
+<body>
+	<div class="container">
+    	<div class="row">
+    		<h3 align="center">
+    		<font color="#029f5b">Doctor Login</font>
+    		</h3>
+    		<br>
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-5">
+							<ul>
+								<li class="hvr-pop"><a href="#" class="active" id="login-form-link">Login</a></li>
+							</ul>
+							</div>
+							<div class="col-xs-5">
+							<ul>
+								<li class="hvr-pop"><a href="#" id="register-form-link" class="active">Register</a></li>
+							</ul>
+							</div>
+							<div class="col-xs-2">
+							<ul>
+								<a href="{{ url_for('.home') }}" class="hvr-pop"><li class="fa fa-home" ></li></a>
+							</ul>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" action="http://localhost:5000/doclog" method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Enter Username" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" required>
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+										<label for="remember"> Remember Me</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<form id="register-form" action="http://localhost:5000/adddoc" method="post" role="form"  style="display: none;">
+								
+								<div class="form-group">
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Enter your name" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" required>
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone Number" required>
+									</div>
+									<div class="form-group">
+										<input type="date" name="birth" id="birth" tabindex="2" class="form-control" placeholder="Date of Birth" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="address" id="address" tabindex="2" class="form-control" placeholder="Address" required>
+									</div>
+									<h5>Specialization</h5>
+									<select class="form-control" id="special" name="special">
+ 									<option id="s0">--</option>
+									<option id="s1" value="Anesthesiology">Anesthesiology</option>
+									<option id="s2">Cardiac Surgery</option>
+									<option id="s3">Cardiology</option>
+									<option id="s4">Cardiothoracic Surgery</option>
+									<option id="s5">Dentistry</option>
+									<option id="s6">Dermatology</option>
+									<option id="s7">Emergency Medicine</option>
+									<option id="s8">Endocrinology</option>
+									<option id="s9">Family Medicine</option>
+									<option id="s10">Gastroenterologist</option>
+									<option id="s11">General Practioner</option>
+									<option id="s12">General Surgery</option>
+									<option id="s13">Geriatrics</option>
+									<option id="s14">Gynaecology</option>
+									<option id="s15">Hematology</option>
+									<option id="s16">Hepatology</option>
+									<option id="s17">Immunology</option>
+									<option id="s18">Infectious Disease</option>
+									<option id="s19">Intensive Care Medicine</option>
+									<option id="s20">Internal Medicine</option>
+									<option id="s21">Maternal-Fetal Medicine</option>
+									<option id="s22">Medical Genetics</option>
+									<option id="s23">Neanotology</option>
+									<option id="s24">Nephrology</option>
+									<option id="s25">Neurology</option>
+									<option id="s26">Neurosurgery</option>
+									<option id="s27">Nuclear Medicine</option>
+									<option id="s28">Obstetrics</option>
+									<option id="s29">Obstetrics and Gynaecology</option>
+									<option id="s30">Occupational Medicine</option>
+									<option id="s31">Oncology</option>
+									<option id="s32">Ophthamology</option>
+									<option id="s33">Organ Transplatation</option>
+									<option id="s34">Orthopedic Surgery</option>
+									<option id="s35">Otolaryngology</option>
+									<option id="s36">Pain Management</option>
+									<option id="s37">Pathology</option>
+									<option id="s38">Pediatric Surgery</option>
+									<option id="s39">Pediatrics</option>
+									<option id="s40">Physical Medicine and Rehabilitation</option>
+									<option id="s41">Plastic Surgery</option>
+									<option id="s42">Podiatry</option>
+									<option id="s43">Preventive Healthcare</option>
+									<option id="s44">Psychotry</option>
+									<option id="s45">Pulmonology</option>
+									<option id="s46">Radiology</option>
+									<option id="s47">Rheumatology</option>
+									<option id="s48">Sports Medicine</option>
+									<option id="s49">Surgery</option>
+									<option id="s50">Urology</option>
+									<option id="s51">Vascular Surgery</option>
+									</select>
+									<br>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now" onclick="validate()">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/main.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/form-validation.js')}}"></script>
+	<script type="text/javascript">
+	document.getElementById("home-link").onclick = function () 
+    {
+        location.href = "/Users/Logosbytes/Desktop/UI/templates/index.html";
+    };
+    </script>
+
+</body>
+</html>

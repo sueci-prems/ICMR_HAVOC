@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diagnose Heart Disease</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/hover.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Mobile Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- JQuery Script-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  <!-- Google Web Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700,800,700italic,600italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Neuton:400,200,300' rel='stylesheet' type='text/css'>
+
+<div class="row">
+<div class="bg-image" id="jumboid">
+<img src="images/icmr.jpg" class="img-responsive" alt="ICMR" width="100%" height="40%" back> 
+</div>
+</head>
+<br>
+<body>
+<div class="container jumbotron">
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-login">
+          <div class="panel-heading">
+          <div class="row"></div>
+		<div class="Predict_Form">
+     <h4><font color="">Disease Prediction</h4>
+			<form action="{{ url_for('predict_Data') }}" id="predict" method="POST">
+				<br>
+          <h5><font color="black"> First Name</font></h5>
+  				<input type="text" name="firstname" placeholder="First Name">
+          <h5><font color="black"> Last Name</font></h5>
+  				<input type="text" name="lastname" placeholder="Last Name">
+          <h5><font color="black"> Age</font></h5>
+  				<input type="text" name="age" placeholder="Age">
+  				<h5><font color="black"> Sex:</font></h5>
+  				<input type="radio" name="sex" value="0"> Male<br>
+          <input type="radio" name="sex" value="1"> Female<br>
+  				<h5><font color="black"> Chest Pain Type</font></h5>
+  				<input type="radio" name="cp" value="1"> Typical Angina<br>
+          <input type="radio" name="cp" value="2"> Atypical Angina<br>
+          <input type="radio" name="cp" value="3"> Non Anginal<br>
+          <input type="radio" name="cp" value="4"> Asymptomatic<br>
+          <h5><font color="black"> Blood Pressure</font></h5>
+  				<input type="text" name="trestbps" placeholder="Blood Pressure">
+  				<h5><font color="black"> Cholestrol</font></h5>
+  				<input type="text" name="chol" placeholder="Cholestrol">
+  				<h5><font color="black"> Fasting Blood Sugar</font> </h5>
+  				<input type="radio" name="fbs" value="1"> &lt;120 <br>
+          <input type="radio" name="fbs" value="0"> &gt;120 <br>
+  				<h5><font color="black"> Resulting ECG Results</font> </h5>
+  				<input type="radio" name="restecg" value="0"> Normal<br>
+          <input type="radio" name="restecg" value="1"> ST-T wave Abnormality<br>
+          <input type="radio" name="restecg" value="2"> Probable / Definite left ventricular Hypertropy<br>
+          <h5><font color="black"> Max Heart Rate</font></h5>
+  				<input type="text" name="thalach" placeholder="Max Heart Rate"><br>
+  				<h5><font color="black"> Exercise Induced Angina</font></h5><br>
+  				<input type="radio" name="exang" value="1"> Yes<br>
+          <input type="radio" name="exang" value="0"> No<br>
+          <h5><font color="black"> Oldpeak ST Depression</font></h5>
+  				<input type="text" name="oldpeak" placeholder="Oldpeak ST Depression">
+          <h5><font color="black"> Slope of ST Segment:</font></h5>
+  				<input type="radio" name="slope" value="1"> Upsloping<br>
+          <input type="radio" name="slope" value="2"> Flat<br>
+          <input type="radio" name="slope" value="3"> Downsloping<br>
+  				<h5><font color="black"> Major Coloured Vesseles by Flurosopy</font></h5>
+  				<input type="radio" name="ca" value="0"> 0<br>
+          <input type="radio" name="ca" value="1"> 1<br>
+          <input type="radio" name="ca" value="2"> 2<br>
+          <input type="radio" name="ca" value="3"> 3<br>
+  				<h5><font color="black">Thallium Heart Scan</font></h5>
+  				<input type="radio" name="thal" value="3"> Normal<br>
+          <input type="radio" name="thal" value="6"> Fixed Defect<br>
+          <input type="radio" name="thal" value="7"> Reversable Defect<br>
+  				<input type="submit" class="button btn-danger" name="submit" value="Predict">
+			</form>
+		</div>
+    </div>
+    </div>
+		</div>
+	</div>
+	<div class="col-md-3">
+    
+  </div>
+</div>
+</div>
+</body>
+</html>

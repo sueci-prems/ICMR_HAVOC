@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Patient</title>
+ 	
+	<!-- Style Switches-->
+
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/style.css')}}">
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/hover.css')}}">
+	<link rel="stylesheet"  href="{{ url_for('static',filename='css/bootstrap.css')}}"> 
+	<link href="{{ url_for('static',filename='font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+
+	<!-- Mobile Meta -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- JQuery Script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700,800,700italic,600italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Neuton:400,200,300' rel='stylesheet' type='text/css'>
+
+
+</head>
+<header>
+<div class="row">
+<div class="bg-image" id="jumboid">
+<img src="{{url_for('static',filename='images/icmr.jpg')}}" class="img-responsive" alt="ICMR" width="100%" height="40%" back> 
+</div>
+</header>
+<br>
+
+<body>
+	<div class="container">
+    	<div class="row">
+    	<h3 align="center">
+    	<font color="#029f5b">New Patient</font>
+    	</h3>
+    	<br>
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-5">
+								<ul>
+									<li class="hvr-pop"><a href="#" class="active" id="login-form-link">Existing Patient</a> </li>
+								</ul>
+							</div>
+							<div class="col-xs-5">
+							<ul>
+								<li class="hvr-pop"><a href="{{url_for('addpat') }}" id="register-form-link" class="active">New Patient</a></li>
+							</ul>
+							</div>
+							<div class="col-xs-2">
+							<ul>
+								<a href="{{url_for('rechome') }}" class="hvr-pop"><li class="fa fa-home" id="home-link"></li></a>
+							</ul>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" action="http://localhost:5000/newpat" method="post" role="form" style="display: none;">
+								<div class="form-group">
+										<input type="text" name="pid" id="pid" tabindex="1" class="form-control" placeholder="Enter Patient ID" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Patient Name" value="" required>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								
+								<form id="register-form" action="http://localhost:5000/addpat" method="post" role="form" style="display: none;">
+								<div class="form-group">
+										<input type="text" name="pid" id="pid" tabindex="1" class="form-control" placeholder="Patient ID" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="did" id="did" tabindex="1" class="form-control" placeholder="Concerned Doctor" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Patient Name" value="" required>
+									</div>
+									<div class="form-group">
+										<input type="email" name="pemail" id="pemail" tabindex="1" class="form-control" placeholder="Email Address" value="" required>
+									</div>
+									<div class="form-group">
+									
+										<input type="number" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone" required>
+										
+									</div>
+									<div class="form-group">
+										<input type="text" name="paddress" id="paddress" tabindex="2" class="form-control" placeholder="Patient Address" required>
+									</div>
+									<div class="form-group">
+										<input type="date" name="birth" id="birth" tabindex="2" class="form-control" placeholder="Date of Birth" required>
+									</div>
+									<select class="form-control" id="bg" name="bg">
+ 									<option id="s0">Blood Group</option>
+									<option id="s1">O+ve</option>
+									<option id="s2">O-ve</option>
+									<option id="s3">A+ve</option>
+									<option id="s4">A-ve</option>
+									<option id="s5">B+ve</option>
+									<option id="s6">B-ve</option>
+									<option id="s7">AB+ve</option>
+									<option id="s8">AB-ve</option>
+									</select>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now" onclick="validate()">
+												<br>											
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/main.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/form-validation.js')}}"></script>
+</body>
+</html>
